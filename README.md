@@ -70,7 +70,7 @@ Add basic html structure in html:
 Add code to generate steps:
 
 ```javascript
-var stepper = $("#myStepper")
+var stepper = $("#mySteps")
 var stepperOptions =
     {
         progress: 2,
