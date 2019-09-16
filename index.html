@@ -39,30 +39,6 @@
                 <p>You can spice up adding other <code>&lt;li&gt;</code> tags and adjusting the size of each. Add the class <code>class="activated"</code> to mark each completed step.</p>
                 <br />
                 <div class="steps">
-                    <ul class="steps-container">
-                        <li style="width:33%;" class="activated">
-                            <div class="step">
-                                <div class="step-image"><span></span></div>
-                                <div class="step-current">Etapa 1</div>
-                                <div class="step-description">Contexto</div>
-                            </div>
-                        </li>
-                        <li style="width:33%;">
-                            <div class="step">
-                                <div class="step-image"><span></span></div>
-                                <div class="step-current">Etapa 2</div>
-                                <div class="step-description">Selecionar</div>
-                            </div>
-                        </li>
-                        <li style="width:33%;">
-                            <div class="step">
-                                <div class="step-image"><span></span></div>
-                                <div class="step-current">Etapa 3</div>
-                                <div class="step-description">Finalizar</div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="step-bar" style="width: 33.33%;"></div>
                 </div>
                 <pre>
 &lt;div class="steps"&gt;
@@ -97,5 +73,27 @@
         <footer>
             <a href="https://github.com/tcavalin/stepProgress" target="_blank">stepProgress</a> by <a href="https://github.com/tcavalin" target="_blank">Tiago Cavalin</a>
         </footer>
+
+        <script>
+            var stepper = $('.steps')
+            var options = {
+                progress: 1,
+                steps: [
+                    {
+                        title: 'Etapa 1',
+                        subTitle: 'Contexto'
+                    },
+                    {
+                        title: 'Etapa 2',
+                        subTitle: 'Selecionar'
+                    },
+                    {
+                        title: 'Etapa 3',
+                        subTitle: 'Finalizar'
+                    }
+                ]
+            }
+            updateStepper(stepper, options)
+        </script>
     </body>
 </html>

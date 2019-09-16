@@ -6,7 +6,6 @@ function addStep(width, isActivated, step) {
     $("<div class=\"step-description\">" + step.subTitle + "</div>").appendTo(masterDiv)
 
     var percent = (width * 100).toFixed(2) + '%'
-    console.log("percent: ", percent)
     li.css('width', percent)
     if (isActivated) {
         li.addClass('activated')
@@ -19,11 +18,17 @@ function addStep(width, isActivated, step) {
 
 function updateStepper(stepper, options) {
     var _container = stepper.find('.steps-container')
+    if (_container.length === 0) {
+        _container = $("<ul class=\"steps-container\"></ul>").appendTo(stepper)
+    }
     var _progress = options.progress || 0
     var steps = options.steps
     if (steps && steps.length > 0) {
         if (_progress > steps.length) {
             _progress = steps.length
+        }
+        if (_progress < 0) {
+            _progress = 0
         }
         _container.empty() // Remove children
         var _step_length = (1 / steps.length)
@@ -38,6 +43,9 @@ function updateStepper(stepper, options) {
     if (_progress > _current_steps.length) {
         _progress = _current_steps.length
     }
+    if (_progress < 0) {
+        _progress = 0
+    }
     for (var i = 0; i < _current_steps.length; i++) {
         var li = $(_current_steps[i])
         if (_progress > i) {
@@ -49,5 +57,9 @@ function updateStepper(stepper, options) {
     }
 
     var _bar_percent = (_progress * (1 / _container.children().length) * 100).toFixed(2) + '%'
-    stepper.find(".step-bar").css('width', _bar_percent)
+    var _step_bar = stepper.find(".step-bar")
+    if (_step_bar.length === 0) {
+        _step_bar = $("<div class=\"step-bar\"></div>").appendTo(stepper)
+    }
+    _step_bar.css('width', _bar_percent)
 }
