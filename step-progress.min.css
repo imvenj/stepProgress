@@ -39,13 +39,19 @@
             -ms-border-radius: 37px   ; }
         .steps .steps-container li .step .step-current {
           font-size: 14px;
-          font-style: italic;
           color: #999;
           margin: 8px 0 0 0; }
         .steps .steps-container li .step .step-description {
           font-size: 12px;
-          font-style: italic;
           color: #538897; }
+      .steps .steps-container li.activated .step-current {
+        font-size: 14px;
+        font-weight: bold;
+        color: #444;
+        margin: 8px 0 0 0; }
+      .steps .steps-container li.activated .step-description {
+        font-size: 12px;
+        color: #20667b; }
       .steps .steps-container li.activated .step .step-image span {
         background-color: #5DC177; }
         .steps .steps-container li.activated .step .step-image span:after {
