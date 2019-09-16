@@ -61,9 +61,6 @@ Add basic html structure in html:
 
 ```html
     <div id="mySteps">
-        <ul class="steps-container">
-        </ul>
-        <div class="step-bar"></div>
     </div>
 ```
 
